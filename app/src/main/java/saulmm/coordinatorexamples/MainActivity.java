@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
 		toolbar.inflateMenu(R.menu.main);
 		toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-			@Override public boolean onMenuItemClick(MenuItem item) {
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
 				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_REPO_URL));
 				startActivity(browserIntent);
 				return true;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		findViewById(R.id.main_ioexample_textview).setOnClickListener(this);
 		findViewById(R.id.main_space_textview).setOnClickListener(this);
 		findViewById(R.id.main_swipebehavior_textview).setOnClickListener(this);
+		findViewById(R.id.gocollapsingtoolbarlayout).setOnClickListener(this);
+		findViewById(R.id.gocpprdomatorlayout).setOnClickListener(this);
 	}
 
 	@Override
@@ -54,7 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			case R.id.main_coordinator_textview:
 				SimpleCoordinatorActivity.start(this);
 				break;
-
+			case R.id.gocollapsingtoolbarlayout:
+				CollapsingToolbarLayout.start(this);
+				break;
+			case R.id.gocpprdomatorlayout:
+				Coordinatorlayout.start(this);
+				break;
 			case R.id.main_ioexample_textview:
 				IOActivityExample.start(this);
 				break;
